@@ -2,5 +2,7 @@
 number=$RANDOM
 echo "A" | tee log-{01..50}
 echo "a" | tee -a log-{01..50}
-echo $number | tee log-{51..100}
-echo "#@%&" | tee -a log-{51..100} 
+for (( i=51; i<=100; i++ ))
+do
+cat /dev/urandom | env LC_ALL=C tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1 | tee log-$i
+done
