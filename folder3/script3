@@ -1,0 +1,6 @@
+#!bin/bash
+number=$RANDOM
+echo "A" | tee log-{01..50}
+echo "a" | tee -a log-{01..50}
+echo $number | tee log-{51..100}
+echo "#@%&" | tee -a log-{51..100} 
