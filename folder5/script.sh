@@ -1,1 +1,2 @@
-awk 'BEGIN{max=$2}{if ($2 > max) max=$2}END{print max}' log*
+#!bin/bash
+sort -t= -nr log-{1..100} | head -1
